@@ -15,8 +15,8 @@ namespace GateWay.Controllers
          {
              try
              {
-                 var _addressService = new AddressService();
-                 bool exists = await _addressService.CheckCityAndStreetExists(cityName, streetName);
+                 var _addressModel = new AddressModel();
+                 bool exists = await _addressModel.CheckCityAndStreetExists(cityName, streetName);
 
                  if (exists)
                  {

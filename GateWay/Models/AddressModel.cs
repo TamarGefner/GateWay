@@ -7,12 +7,12 @@ using Newtonsoft.Json.Linq;
 
 namespace GateWay.Models
 {
-    public class AddressService
+    public class AddressModel
     {
         private readonly HttpClient _httpClient;
         private readonly string _apiBaseUrl = "https://data.gov.il/api/3/action/datastore_search?resource_id=bf185c7f-1a4e-4662-88c5-fa118a244bda&limit=145515";
 
-        public AddressService()
+        public AddressModel()
         {
             _httpClient = new HttpClient();
         }

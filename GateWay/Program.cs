@@ -23,11 +23,13 @@ namespace GateWay
             }
 
             app.UseAuthorization();
-
+            
 
             app.MapControllers();
 
             app.Run();
+             
+            
         }
     }
 }

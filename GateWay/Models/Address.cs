@@ -51,7 +51,7 @@ namespace GateWay.Models
         public bool total_was_estimated { get; set; }
     }
 
-    public class Root
+    public class AddressRoot
     {
         public string help { get; set; }
         public bool success { get; set; }

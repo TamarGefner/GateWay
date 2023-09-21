@@ -26,7 +26,7 @@ namespace GateWay.Models
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    var root = JsonConvert.DeserializeObject<Root>(content);
+                    var root = JsonConvert.DeserializeObject<AddressRoot>(content);
 
                     if (root?.result?.records != null)
                     {

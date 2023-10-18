@@ -11,7 +11,7 @@ namespace GateWay.Controllers
     public class AddressController : ControllerBase
     {
         [HttpGet("check")]
-         public async Task<string> CheckCityAndStreet([FromQuery] string cityName, [FromQuery] string streetName)
+         public async Task<bool> CheckCityAndStreet([FromQuery] string cityName, [FromQuery] string streetName)
          {
              try
              {
@@ -20,16 +20,16 @@ namespace GateWay.Controllers
 
                  if (exists)
                  {
-                     return "City and street exist in the data.";
+                    return true;
                  }
                  else
                  {
-                     return "City and street not found in the data.";
+                    return false;
                  }
              }
              catch (Exception ex)
              {
-                 return "ERROR";
+                 return false;
              }
          }
      }

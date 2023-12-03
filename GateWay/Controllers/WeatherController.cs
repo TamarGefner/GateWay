@@ -35,9 +35,9 @@ namespace GateWay.Controllers
                         pressure = weatherResponse.Main.Pressure,
                         humidity = weatherResponse.Main.Humidity,
                         main = weatherResponse.Weather[0].Main,
-                        descripition = weatherResponse.Weather[0].Description,
+                        description = weatherResponse.Weather[0].Description,
                     };
-                    return Ok(weatherResponse);
+                    return Ok(weather);
                 }
                 else
                 {

@@ -8,7 +8,7 @@ namespace GateWay.Models
 {
     public class ImaggaModel
     {
-        public async Task<bool> CheckImage(string imageUrl)
+        public async Task<bool> CheckImage(string imageUrl, string description)
         {
             string apiKey = "acc_99243853ec106fb";
             string apiSecret = "e158559864c958a22ea9325862b3eeb4";
@@ -45,7 +45,7 @@ namespace GateWay.Models
                 }
 
                 // Define the tags to check for
-                var tagsToCheck = new List<string> { "coffee" };
+                var tagsToCheck = description.Split(' ');
 
                 // Check if any of the desired tags exist in the list
                 foreach (var tagToCheck in tagsToCheck)

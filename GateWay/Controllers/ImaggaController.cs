@@ -9,13 +9,13 @@ namespace GateWay.Controllers
     public class ImaggaController : ControllerBase
     {
         [HttpGet("CheckImage")]
-        public async Task<IActionResult> CheckImage([FromQuery] string imageUrl)
+        public async Task<IActionResult> CheckImage([FromQuery] string imageUrl, [FromQuery] string description)
         {
             try
             {
                 ImaggaModel imaggaModel = new ImaggaModel();
 
-                bool tagExists = await imaggaModel.CheckImage(imageUrl);
+                bool tagExists = await imaggaModel.CheckImage(imageUrl, description);
 
                 // Return appropriate messages based on the result
                 if (tagExists)

@@ -31,7 +31,15 @@ namespace ServiceHW.Controllers
                 {
                     var json = await response.Content.ReadAsStringAsync();
                     var hebrewDate = JsonConvert.DeserializeObject<HebcalRoot>(json);
-                    return Ok(hebrewDate);
+                    var hebdate = new
+                    {
+                           hy = hebrewDate.hy,
+                           hm = hebrewDate.hm,
+                           hd = hebrewDate.hd,
+                           hebrew = hebrewDate.hebrew,
+                           events = string.Join(" , ", hebrewDate.events),
+                    };
+                    return Ok(hebdate);
                 }
                 else
                 {

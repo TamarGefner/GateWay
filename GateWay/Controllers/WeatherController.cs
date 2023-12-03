@@ -26,6 +26,17 @@ namespace GateWay.Controllers
 
                 if (weatherResponse != null)
                 {
+                    var weather = new
+                    {
+                        temp = weatherResponse.Main.Temp,
+                        feelslike = weatherResponse.Main.FeelsLike,
+                        tempmin = weatherResponse.Main.TempMin,
+                        tempmax = weatherResponse.Main.TempMax,
+                        pressure = weatherResponse.Main.Pressure,
+                        humidity = weatherResponse.Main.Humidity,
+                        main = weatherResponse.Weather[0].Main,
+                        descripition = weatherResponse.Weather[0].Description,
+                    };
                     return Ok(weatherResponse);
                 }
                 else
